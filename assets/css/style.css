@@ -178,7 +178,7 @@ a:hover{
   bottom: -10rem;
   /* margin-top: 10px; */
   background-color: #FBF0E7;
-  width: 12rem;
+  width: 10rem;
   height: 10rem;
   display: none;
 }
@@ -204,6 +204,7 @@ a:hover{
   max-width: 80%;
   /* background-color: #FBF0E7; */
   margin-top: 2rem;
+  margin-bottom: 12rem;
 }
 
 .section .title, .section .briefintro{
@@ -229,6 +230,9 @@ a:hover{
   margin: 2rem auto;
   font-weight: 300;
   font-size: 18px;
+}
+.section .briefintro1-c {
+  text-align: center;
 }
 
 .section .pic img{
@@ -272,3 +276,33 @@ a:hover{
   justify-content: center;
   margin-top: 2rem;
 }
+
+.keyan {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+.keyan .pic {
+  width: 50%;
+}
+.keyan .pic img {
+  width: 100%;
+}
+
+.keyan .title {
+  width: 42%;
+}
+.keyan .title .title-e, .keyan .title .title-c {
+  margin-top: 6rem;
+  text-align: left;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 400;
+  color: #E39384;
+}
+.keyan .title .title-c {
+  margin-top: 1rem;
+  color: #333333;
+}
+

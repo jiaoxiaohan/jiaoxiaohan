@@ -46,8 +46,12 @@ window.onload = function () {
                 callback = openNiko;
             }
 
-            if(tab_name === "keyan") {
-                callback = openKeyan;
+            if(tab_name === "keyandonghua") {
+                callback = openKeyandonghua;
+            }
+
+            if(tab_name === "keyanjiaohu") {
+                callback = openKeyanjiaohu;
             }
 
             if(tab_name === "works") {
@@ -227,10 +231,10 @@ function openDownloads() {
 }
 
 
-function openKeyan() {
+function openKeyandonghua() {
 
     $.ajax({
-        url: "./assets/static/keyan.html",
+        url: "./assets/static/keyandonghua.html",
         type: "get",
         contentType: "text/html",
         dataType: "html",
@@ -240,3 +244,15 @@ function openKeyan() {
     });
 }
 
+function openKeyanjiaohu() {
+
+    $.ajax({
+        url: "./assets/static/keyanjiaohu.html",
+        type: "get",
+        contentType: "text/html",
+        dataType: "html",
+        success: function(res) {
+            document.querySelector("main").innerHTML = res;
+        }
+    });
+}
