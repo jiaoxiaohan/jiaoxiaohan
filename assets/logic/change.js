@@ -54,10 +54,66 @@ window.onload = function () {
                 callback = openKeyanjiaohu;
             }
 
+            if(tab_name === "mohe") {
+                callback = openMohe;
+            }
+
+            if(tab_name === "mg") {
+                callback = openMg;
+            }
+
             if(tab_name === "works") {
             }
             
             VISIT_PAGE(tab_name, callback);
+            
+        };
+    });
+
+    document.querySelectorAll(".cardbox").forEach((card, n, nodes) => {
+        let card_name = tab.getAttribute("name");
+        let callback;
+        card.onclick = function() {
+            navRelocation(card_name);
+            if(card_name === "youli") {
+                callback = openYouli;
+            }
+            if(card_name === "yundongji") {
+                callback = openYundongji;
+            }
+
+            if(card_name === "xueren") {
+                callback = openXueren;
+            }
+
+            if(card_name === "baomihua") {
+                callback = openBaomihua;
+            }
+            
+            if(card_name === "niko") {
+                callback = openNiko;
+            }
+
+            if(card_name === "keyandonghua") {
+                callback = openKeyandonghua;
+            }
+
+            if(card_name === "keyanjiaohu") {
+                callback = openKeyanjiaohu;
+            }
+
+            if(card_name === "mohe") {
+                callback = openMohe;
+            }
+
+            if(card_name === "mg") {
+                callback = openMg;
+            }
+
+            if(card_name === "works") {
+            }
+            
+            VISIT_PAGE(card_name, callback);
             
         };
     });
@@ -113,6 +169,7 @@ function openHomepage_ex() {
             // gallery_loading();
         }
     });
+    
 }
 
 
@@ -169,6 +226,29 @@ function openBaomihua() {
 function openNiko() {
     $.ajax({
         url: "./assets/static/niko.html",
+        type: "get",
+        contentType: "text/html",
+        dataType: "html",
+        success: function(res) {
+            document.querySelector("main").innerHTML = res;
+        }
+    });
+}
+
+function openMohe() {
+    $.ajax({
+        url: "./assets/static/mohe.html",
+        type: "get",
+        contentType: "text/html",
+        dataType: "html",
+        success: function(res) {
+            document.querySelector("main").innerHTML = res;
+        }
+    });
+}
+function openMg() {
+    $.ajax({
+        url: "./assets/static/mg.html",
         type: "get",
         contentType: "text/html",
         dataType: "html",
