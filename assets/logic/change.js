@@ -19,13 +19,17 @@ window.onload = function () {
     VISIT_PAGE("home", openHomepage_ex);
 
     // 导航栏事件绑定
-    document.querySelectorAll(".navbar-item").forEach((tab, i, nodes) => {
+    document.querySelectorAll(".navbar-item-click").forEach((tab, i, nodes) => {
         let tab_name = tab.getAttribute("name");
         let callback;
         tab.onclick = function() {
             navRelocation(tab_name);
             if(tab_name === "home") {
-                callback = openHomepage_ex;
+                // callback = openHomepage_ex;
+                location.reload();
+            }
+            if(tab_name === "jiaohu") {
+                
             }
             if(tab_name === "youli") {
                 callback = openYouli;
@@ -62,61 +66,61 @@ window.onload = function () {
                 callback = openMg;
             }
 
-            if(tab_name === "works") {
-            }
             
             VISIT_PAGE(tab_name, callback);
             
         };
     });
 
-    document.querySelectorAll(".cardbox").forEach((card, n, nodes) => {
-        let card_name = tab.getAttribute("name");
-        let callback;
-        card.onclick = function() {
-            navRelocation(card_name);
-            if(card_name === "youli") {
-                callback = openYouli;
-            }
-            if(card_name === "yundongji") {
-                callback = openYundongji;
-            }
-
-            if(card_name === "xueren") {
-                callback = openXueren;
-            }
-
-            if(card_name === "baomihua") {
-                callback = openBaomihua;
-            }
-            
-            if(card_name === "niko") {
-                callback = openNiko;
-            }
-
-            if(card_name === "keyandonghua") {
-                callback = openKeyandonghua;
-            }
-
-            if(card_name === "keyanjiaohu") {
-                callback = openKeyanjiaohu;
-            }
-
-            if(card_name === "mohe") {
-                callback = openMohe;
-            }
-
-            if(card_name === "mg") {
-                callback = openMg;
-            }
-
-            if(card_name === "works") {
-            }
-            
-            VISIT_PAGE(card_name, callback);
-            
-        };
-    });
+ 
+    
+    setTimeout(() => {
+        document.querySelectorAll(".cardbox-btn").forEach((card, n, nodes) => {
+            let card_name = card.getAttribute("name");
+            let callback;
+            card.onclick = function() {
+                navRelocation(card_name);
+                if(card_name === "youli") {
+                    callback = openYouli;
+                }
+                if(card_name === "yundongji") {
+                    callback = openYundongji;
+                }
+    
+                if(card_name === "xueren") {
+                    callback = openXueren;
+                }
+    
+                if(card_name === "baomihua") {
+                    callback = openBaomihua;
+                }
+                
+                if(card_name === "niko") {
+                    callback = openNiko;
+                }
+    
+                if(card_name === "keyandonghua") {
+                    callback = openKeyandonghua;
+                }
+    
+                if(card_name === "keyanjiaohu") {
+                    callback = openKeyanjiaohu;
+                }
+    
+                if(card_name === "mohe") {
+                    callback = openMohe;
+                }
+    
+                if(card_name === "mg") {
+                    callback = openMg;
+                }
+                
+                VISIT_PAGE(card_name, callback);
+                
+            };
+        });
+        
+    }, 30); 
     
 }
 
@@ -124,30 +128,37 @@ function navRelocation(name = "") {
     name = name || "home";
     // console.log(name + " tab clicked.");
 
-    document.querySelectorAll(".navbar-item").forEach((tab, i, nodes) => {
+    document.querySelectorAll(".navbar-item-click").forEach((tab, i, nodes) => {
         if(tab.getAttribute("name") === name) {
             if(!tab.classList.contains("active")) {
-                if(tab.getAttribute("name") =='youli'|| tab.getAttribute("name") =='yundong'|| tab.getAttribute("name") =='baomihua'){
+                if(tab.getAttribute("name") =='youli'|| tab.getAttribute("name") =='xueren'|| tab.getAttribute("name") =='baomihua'){
                     document.getElementById("works").classList.add("active");
-                }else{
+                }else if(tab.getAttribute("name") =='keyandonghua'|| tab.getAttribute("name") =='keyanjiaohu'){
+                    document.getElementById("keyan").classList.add("active");
+                }else if(tab.getAttribute("name") =='mohe'|| tab.getAttribute("name") =='mg'){
+                    document.getElementById("qita").classList.add("active");
+                }
+                else{
                     tab.classList.add("active");
                 }
                 
             }
         } else {
             if(tab.classList.contains("active")) {
-                if(tab.getAttribute("name") =='youli' || tab.getAttribute("name") =='yundong'|| tab.getAttribute("name") =='baomihua'){
+                if(tab.getAttribute("name") =='youli' || tab.getAttribute("name") =='xueren'|| tab.getAttribute("name") =='baomihua'){
                     document.getElementById("works").classList.remove("active");
-                }else{
+                }else if(tab.getAttribute("name") =='keyandonghua' || tab.getAttribute("name") =='keyanjiaohu'){
+                    document.getElementById("keyan").classList.remove("active");
+                }else if(tab.getAttribute("name") =='mohe' || tab.getAttribute("name") =='mg'){
+                    document.getElementById("qita").classList.remove("active");
+                }
+                else{
                     tab.classList.remove("active");
                 }
-                
             }
-            // if(tab.classList.contains("active")) {
-            //     tab.classList.remove("active");
-            // }
         }
     });
+
 
     document.querySelector("main").innerHTML = "";
 }
