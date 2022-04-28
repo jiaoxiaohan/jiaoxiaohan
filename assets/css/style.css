@@ -350,6 +350,11 @@ a:hover{
   justify-content: space-between;
   flex-wrap: wrap;
 }
+@media (min-width: 576px) {
+  .section .workcard {
+    width: 98%;
+  }
+}
 
 .section .workcard .cardbox-btn {
   width: 47%;
