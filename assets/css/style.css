@@ -1,6 +1,26 @@
+*, div, p {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
 
-body, a {
+botton {
+  outline: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover, a:focus {
+  color: #000000;
+  text-decoration: none;
+}
+
+body {
+  
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -41,9 +61,11 @@ a:hover{
   }
 }
 
+
 @media (max-width: 576px) {
   .navbar-container {
     box-shadow: none;
+    height: 8rem;
   }
 }
 
@@ -336,6 +358,11 @@ a:hover{
   margin: 2rem 0;
   border-radius: 10px;
   box-shadow: 0px 0px 2px #3333334b;
+}
+@media (max-width: 576px) {
+  .section .workcard .cardbox-btn {
+    width: 100%;
+  }
 }
 
 .section .workcard .cardbox-btn:hover {
