@@ -350,7 +350,10 @@ a:hover{
   justify-content: space-between;
   flex-wrap: wrap;
 }
-@media (min-width: 576px) {
+@media (max-width: 576px) {
+  .big-container {
+    max-width: 90%;
+  }
   .section .workcard {
     width: 98%;
   }
